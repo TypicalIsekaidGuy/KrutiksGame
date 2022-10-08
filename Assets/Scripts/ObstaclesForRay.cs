@@ -18,8 +18,11 @@ public class ObstaclesForRay : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && character_to_use.Equals(PlayerControls.current_player_character))
+        {
             gameManager.ShowButton();
-        else if (other.gameObject.CompareTag("Player") &&!character_to_use.Equals(PlayerControls.current_player_character))
+            gameManager.SetObstacleRay(this);
+        }
+        else if (other.gameObject.CompareTag("Player") && !character_to_use.Equals(PlayerControls.current_player_character))
             gameManager.HideButton();
     }
     private void OnTriggerExit(Collider other)

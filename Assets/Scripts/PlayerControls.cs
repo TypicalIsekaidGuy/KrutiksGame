@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
-using Unity.VisualScripting;
 using UnityEngine;
 using static PlayerControls;
 
 public class PlayerControls : MonoBehaviour
 {
     public GameManager gameManager;
+    [SerializeField] private Camera camera;
     public PlayerMovement movement;
     [SerializeField] private Mesh player_mesh;
     [SerializeField] private Mesh[] character_meshes;
@@ -23,7 +20,7 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        camera.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, transform.position.z  - 5.74f);
     }
     public void ChangeCharacter(int s)
     {

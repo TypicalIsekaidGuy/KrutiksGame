@@ -27,7 +27,10 @@ public class ObstaclesForSol : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && character_to_use.Equals(PlayerControls.current_player_character))
+        {
             gameManager.ShowButton();
+            gameManager.SetObstacleSol(this);
+        }
         else if (!character_to_use.Equals(PlayerControls.current_player_character))
             gameManager.HideButton();
     }
@@ -50,9 +53,9 @@ public class ObstaclesForSol : MonoBehaviour
             playerControls.position += new Vector3(0,0.05f,0);
             yield return new WaitForSeconds(0.01f);
         }
-        while (playerControls.position.x < spawnPoint.position.x)
+        while (playerControls.position.z < spawnPoint.position.z)
         {
-            playerControls.position += new Vector3(0.05f, 0,0);
+            playerControls.position += new Vector3(0, 0, 0.05f);
             yield return new WaitForSeconds(0.01f);
         }
         playerControls.gameObject.GetComponent<CharacterController>().enabled = true;

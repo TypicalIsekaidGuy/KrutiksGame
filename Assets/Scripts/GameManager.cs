@@ -17,4 +17,12 @@ public class GameManager : MonoBehaviour
     {
         ability_button.interactable = false;
     }
+    public void SetObstacleRay(ObstaclesForRay obs)
+    {
+        obstaclesForRay = obs;
+    }
+    public void SetObstacleSol(ObstaclesForSol obs)
+    {
+        obstaclesForSol = obs;
+    }
 }

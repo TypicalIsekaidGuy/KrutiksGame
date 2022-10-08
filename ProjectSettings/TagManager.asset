@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - "\u0426\u0448\u0442"
+  - Win
   layers:
   - Default
   - TransparentFX
